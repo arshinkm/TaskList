@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>Task Manager</h1>
+      <button id="add-task-btn" class="btn-primary">+ Add Task</button>
+      <button id="theme-toggle-btn" class="btn-primary">🌙</button>
+      <button id="voice-input-btn" class="btn-primary">🎙️</button>
+    </header>
+    <input type="text" id="search-input" placeholder="Search tasks..." />
+    <section class="task-dashboard">
+      <div class="task-controls">
+        <select id="sort-tasks">
+          <option value="priority">Sort by Priority</option>
+          <option value="dueDate">Sort by Due Date</option>
+          <option value="title">Sort by Title</option>
+        </select>
+        <button id="export-btn" class="btn-primary">Export Tasks</button>
+      </div>
+      <div class="task-list" id="task-list"></div>
+    </section>
+    <div class="task-form-container" id="task-form-container">
+      <form id="task-form">
+        <input type="text" id="task-title" placeholder="Task Title" required />
+        <textarea id="task-desc" placeholder="Task Description"></textarea>
+        <select id="task-category">
+          <option value="work">Work</option>
+          <option value="personal">Personal</option>
+          <option value="shopping">Shopping</option>
+        </select>
+        <input type="date" id="task-date" />
+        <select id="task-priority">
+          <option value="high">High</option>
+          <option value="medium">Medium</option>
+          <option value="low">Low</option>
+        </select>
+        <label for="recurring-task">Set as Recurring</label>
+        <input type="checkbox" id="recurring-task" />
+        <button type="submit" class="btn-submit">Save Task</button>
+      </form>
+    </div>
+
+    <!-- Task Comments Section -->
+    <div id="task-comments-section" class="task-comments-section">
+      <textarea placeholder="Add a comment..." id="task-comment-input"></textarea>
+      <button id="add-comment-btn" class="btn-primary">Add Comment</button>
+      <div id="comments-list"></div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+
+  <script src="app.js"></script>
+</body>
+</html>

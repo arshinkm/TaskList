@@ -1,0 +1,223 @@
+/* General Reset and Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(45deg, #808000, #F0E68C); /* Olive Green to Khaki Gradient */
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* App Container */
+.app-container {
+  width: 80%;
+  max-width: 1000px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #333;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 1.2em;
+  background-color: #006400; /* Dark Green */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #004d00; /* Darker Green */
+  transform: scale(1.05);
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Task Dashboard */
+.task-dashboard {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.task-list {
+  flex: 1;
+  margin-right: 20px;
+  list-style-type: none;
+  padding: 15px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.task-item {
+  padding: 15px;
+  margin: 10px 0;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease-out;
+}
+
+.task-item:hover {
+  transform: translateY(-5px);
+  background-color: #f1f1f1;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+.task-item .delete-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  color: #ff4d4d;
+  cursor: pointer;
+}
+
+.task-item .delete-btn:hover {
+  color: #ff1a1a;
+}
+
+.task-item .task-category {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 5px;
+  font-size: 0.9em;
+  letter-spacing: 1px;
+}
+
+/* Task Form */
+.task-form-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  display: none;
+  width: 80%;
+  max-width: 400px;
+  transition: all 0.3s ease;
+}
+
+.task-form-container input,
+.task-form-container select,
+.task-form-container textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+.task-form-container input[type="text"],
+.task-form-container input[type="date"] {
+  font-size: 1em;
+}
+
+.task-form-container textarea {
+  font-size: 1em;
+  height: 120px;
+  resize: none;
+}
+
+.task-form-container button {
+  padding: 12px 20px;
+  font-size: 1.2em;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.task-form-container button:hover {
+  background-color: #218838;
+}
+
+/* Categories */
+.work {
+  background-color: #ffcb05;
+}
+.personal {
+  background-color: #ff595e;
+}
+.shopping {
+  background-color: #6b6f77;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background: #121212;
+  color: #ffffff;
+}
+.app-container.dark-mode {
+  background: #333333;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Task Comments */
+.task-comments-section {
+  margin-top: 30px;
+}
+
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  font-size: 1.1em;
+}
+
+.comment {
+  background-color: #f4f4f4;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .task-dashboard {
+    flex-direction: column;
+  }
+  .task-list {
+    margin-right: 0;
+  }
+}
